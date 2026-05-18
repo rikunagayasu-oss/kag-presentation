@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kansai Aquarium Guild — 水族館は、日本の宝。</title>
+  <meta name="description" content="関西水族館ギルド構想。水族館同士は競合ではなく仲間である。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #0a1419;
+      --bg-navy: #0d2a3a;
+      --bg-mid: #143a4f;
+      --teal: #1d6175;
+      --teal-light: #2a8a9e;
+      --coral: #e8725f;
+      --coral-soft: #f4a08e;
+      --lavender: #a89ac8;
+      --gold: #d4b87f;
+      --cream: #f5f5f0;
+      --text: #e8e8e8;
+      --text-muted: #9aa8b0;
+      --text-faint: #5d6f78;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', 'Noto Sans JP', system-ui, sans-serif;
+      background: var(--bg-deep);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+      font-weight: 400;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10vh 6vw;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container {
+      max-width: 960px;
+      width: 100%;
+      z-index: 2;
+      position: relative;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 2.5rem;
+      font-weight: 500;
+    }
+
+    h1, h2 {
+      font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+      font-weight: 500;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+
+    h1 { font-size: clamp(2.8rem, 6.5vw, 5.5rem); line-height: 1.3; margin-bottom: 1.5rem; }
+    h2 { font-size: clamp(2rem, 4.5vw, 3.6rem); line-height: 1.4; margin-bottom: 2rem; }
+
+    h3 {
+      font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+      font-weight: 600;
+      color: var(--coral-soft);
+      margin-bottom: 1rem;
+      letter-spacing: 0.01em;
+    }
+
+    p {
+      font-size: clamp(1rem, 1.35vw, 1.18rem);
+      color: var(--text);
+      margin-bottom: 1.4rem;
+      max-width: 760px;
+    }
+
+    p.lead {
+      font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+      color: var(--text);
+      line-height: 1.9;
+      margin-bottom: 1.6rem;
+    }
+
+    p.muted {
+      color: var(--text-muted);
+      font-size: clamp(0.92rem, 1.1vw, 1.02rem);
+      line-height: 1.8;
+    }
+
+    .accent { color: var(--coral); }
+    .gold { color: var(--gold); }
+    .lav { color: var(--lavender); }
+    .teal-light { color: var(--teal-light); }
+
+    /* === Hero === */
+    #hero {
+      background:
+        radial-gradient(ellipse at 50% 70%, rgba(45, 138, 158, 0.25) 0%, transparent 60%),
+        radial-gradient(ellipse at 20% 30%, rgba(168, 154, 200, 0.12) 0%, transparent 60%),
+        linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-navy) 50%, var(--bg-deep) 100%);
+      text-align: center;
+      justify-content: center;
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,0.4), transparent),
+        radial-gradient(1px 1px at 88% 32%, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1.5px 1.5px at 33% 75%, rgba(212,184,127,0.5), transparent),
+        radial-gradient(1px 1px at 67% 88%, rgba(168,154,200,0.4), transparent),
+        radial-gradient(1px 1px at 92% 67%, rgba(255,255,255,0.3), transparent);
+      pointer-events: none;
+      opacity: 0.7;
+    }
+
+    .hero-title {
+      font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+      font-size: clamp(3.2rem, 9vw, 7.5rem);
+      line-height: 1.25;
+      font-weight: 500;
+      color: var(--cream);
+      margin-bottom: 3rem;
+      letter-spacing: 0.05em;
+    }
+    .hero-title .gold { color: var(--gold); }
+
+    .hero-sub {
+      font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+      font-size: clamp(1.15rem, 1.9vw, 1.55rem);
+      color: var(--text);
+      line-height: 2.2;
+      max-width: 680px;
+      margin: 0 auto 5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-brand {
+      font-size: 0.78rem;
+      letter-spacing: 0.4em;
+      color: var(--text-faint);
+      text-transform: uppercase;
+      margin-top: 4rem;
+      font-weight: 500;
+      line-height: 2.2;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.65rem;
+      letter-spacing: 0.4em;
+      color: var(--text-faint);
+      animation: bounce 2.5s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.6; }
+      40% { transform: translateX(-50%) translateY(8px); opacity: 1; }
+    }
+
+    /* === Section backgrounds === */
+    #why-treasure {
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba(212, 184, 127, 0.08) 0%, transparent 50%),
+        var(--bg-deep);
+    }
+    #challenge { background: var(--bg-deep); }
+    #future {
+      background:
+        radial-gradient(ellipse at 30% 50%, rgba(232, 114, 95, 0.08) 0%, transparent 50%),
+        linear-gradient(180deg, var(--bg-deep) 0%, #102438 50%, var(--bg-navy) 100%);
+    }
+    #philosophy {
+      background:
+        radial-gradient(ellipse at 70% 30%, rgba(168, 154, 200, 0.08) 0%, transparent 50%),
+        var(--bg-navy);
+    }
+    #gathering {
+      background: linear-gradient(180deg, var(--bg-navy) 0%, #1a3848 50%, var(--bg-navy) 100%);
+    }
+    #mechanism {
+      background: var(--bg-deep);
+      padding: 12vh 6vw 0;
+    }
+    .features-wrapper { background: var(--bg-deep); width: 100%; }
+    #expansion { background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-navy) 100%); }
+    #dreams {
+      background: radial-gradient(ellipse at top, #1a2540 0%, var(--bg-deep) 70%);
+      position: relative;
+    }
+    #dreams::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(1.5px 1.5px at 20% 30%, var(--gold), transparent),
+        radial-gradient(1px 1px at 60% 70%, var(--lavender), transparent),
+        radial-gradient(1.5px 1.5px at 80% 20%, var(--coral-soft), transparent),
+        radial-gradient(1px 1px at 30% 80%, var(--cream), transparent),
+        radial-gradient(1px 1px at 70% 40%, var(--lavender), transparent),
+        radial-gradient(1px 1px at 50% 15%, var(--cream), transparent),
+        radial-gradient(1.5px 1.5px at 85% 75%, var(--gold), transparent);
+      background-size: 300px 300px;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    #kansai { background: var(--bg-navy); }
+    #promise { background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-navy) 100%); }
+    #invitation {
+      background: radial-gradient(ellipse at center, var(--bg-mid) 0%, var(--bg-navy) 50%, var(--bg-deep) 100%);
+      text-align: center;
+    }
+
+    /* === Data grid === */
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+      width: 100%;
+    }
+
+    .data-point {
+      padding: 2.5rem 2rem;
+      background: rgba(212, 184, 127, 0.04);
+      border: 1px solid rgba(212, 184, 127, 0.15);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .data-number {
+      font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.6rem;
+    }
+
+    .data-unit {
+      font-size: 0.45em;
+      color: var(--text-muted);
+      margin-left: 0.3em;
+      font-weight: 400;
+    }
+
+    .data-label {
+      font-size: 0.95rem;
+      color: var(--cream);
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    .data-sub {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    /* === Future scene quote === */
+    .future-scene {
+      padding: 3rem 2.5rem;
+      background: linear-gradient(135deg, rgba(232, 114, 95, 0.08), rgba(168, 154, 200, 0.05));
+      border-left: 4px solid var(--coral);
+      border-radius: 8px;
+      margin: 2.5rem 0;
+    }
+
+    .future-scene p {
+      font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+      font-size: clamp(1.2rem, 1.9vw, 1.6rem);
+      line-height: 2;
+      color: var(--cream);
+      margin: 0;
+      letter-spacing: 0.04em;
+    }
+
+    /* === Feature blocks (中核の3つ) === */
+    .feature-block {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      gap: 5rem;
+      padding: 10vh 8vw;
+      position: relative;
+    }
+
+    .feature-block.alt {
+      flex-direction: row-reverse;
+      background: rgba(255, 255, 255, 0.015);
+    }
+
+    .feature-visual {
+      flex: 0 0 280px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .feature-icon {
+      width: 220px;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .feature-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .feature-icon::before {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      background: radial-gradient(circle, rgba(232, 114, 95, 0.12) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    .feature-block.alt .feature-icon::before {
+      background: radial-gradient(circle, rgba(168, 154, 200, 0.15) 0%, transparent 70%);
+    }
+
+    .feature-block:nth-child(3) .feature-icon::before {
+      background: radial-gradient(circle, rgba(45, 138, 158, 0.15) 0%, transparent 70%);
+    }
+
+    .feature-content {
+      flex: 1;
+      max-width: 540px;
+    }
+
+    .feature-number {
+      font-size: 0.75rem;
+      letter-spacing: 0.4em;
+      color: var(--coral);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .feature-block.alt .feature-number { color: var(--lavender); }
+    .feature-block:nth-child(3) .feature-number { color: var(--teal-light); }
+
+    .feature-title {
+      font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 500;
+      color: var(--cream);
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.03em;
+    }
+
+    .feature-lead {
+      font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 1.8rem;
+    }
+
+    .feature-sub-points {
+      list-style: none;
+      padding: 0;
+    }
+
+    .feature-sub-points li {
+      padding: 0.7rem 0 0.7rem 1.5rem;
+      position: relative;
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      line-height: 1.7;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .feature-sub-points li:last-child { border: none; }
+
+    .feature-sub-points li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--coral);
+    }
+
+    .feature-block.alt .feature-sub-points li::before { color: var(--lavender); }
+    .feature-block:nth-child(3) .feature-sub-points li::before { color: var(--teal-light); }
+
+    /* === Audience cards (3 worlds) === */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+      width: 100%;
+    }
+
+    .audience-card {
+      padding: 2.5rem 2rem;
+      background: rgba(255, 255, 255, 0.03);
+      border-top: 3px solid var(--coral);
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .audience-card:nth-child(2) { border-top-color: var(--gold); }
+    .audience-card:nth-child(3) { border-top-color: var(--lavender); }
+
+    .audience-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateY(-4px);
+    }
+
+    .audience-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      line-height: 1;
+    }
+
+    .audience-card h3 {
+      font-size: 1.3rem;
+      color: var(--cream);
+      margin-bottom: 0.4rem;
+    }
+
+    .audience-tagline {
+      font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+      font-size: 1.05rem;
+      color: var(--coral-soft);
+      margin-bottom: 1.2rem;
+      font-style: italic;
+      letter-spacing: 0.02em;
+    }
+
+    .audience-card:nth-child(2) .audience-tagline { color: var(--gold); }
+    .audience-card:nth-child(3) .audience-tagline { color: var(--lavender); }
+
+    .audience-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.8;
+    }
+
+    /* === Dream cards === */
+    .dream-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+      width: 100%;
+    }
+
+    .dream-card {
+      padding: 2rem 1.8rem;
+      background: rgba(232, 114, 95, 0.04);
+      border: 1px solid rgba(232, 114, 95, 0.18);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .dream-card:hover {
+      background: rgba(232, 114, 95, 0.08);
+      transform: translateY(-4px);
+      border-color: rgba(232, 114, 95, 0.4);
+    }
+
+    .dream-card h3 {
+      font-size: 1.15rem;
+      color: var(--coral-soft);
+      margin-bottom: 0.8rem;
+    }
+
+    .dream-card p {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .dream-caveat {
+      margin-top: 2.5rem;
+      padding: 1.5rem 1.8rem;
+      background: rgba(212, 184, 127, 0.06);
+      border-left: 2px solid var(--gold);
+      border-radius: 4px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    /* === Aquarium list === */
+    .aquarium-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.8rem;
+      margin-top: 2.5rem;
+      list-style: none;
+      width: 100%;
+    }
+
+    .aquarium-list li {
+      padding: 1.1rem 1.4rem;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 4px;
+      font-weight: 500;
+      color: var(--cream);
+      font-size: 0.95rem;
+      border-left: 2px solid var(--teal-light);
+      transition: all 0.3s ease;
+    }
+
+    .aquarium-list li:hover {
+      background: rgba(255, 255, 255, 0.07);
+      border-left-color: var(--coral);
+    }
+
+    /* === Promises === */
+    .promises {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      margin-top: 3rem;
+      width: 100%;
+    }
+
+    .promise-item {
+      padding: 2rem;
+      background: rgba(168, 154, 200, 0.05);
+      border-left: 3px solid var(--lavender);
+      border-radius: 4px;
+    }
+
+    .promise-item h3 {
+      font-size: 1.25rem;
+      color: var(--lavender);
+      margin-bottom: 0.8rem;
+    }
+
+    .promise-item p {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.8;
+    }
+
+    /* === Invitation === */
+    #invitation .container { max-width: 720px; }
+
+    .invitation-title {
+      font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+      font-size: clamp(2.2rem, 5.2vw, 4rem);
+      line-height: 1.5;
+      font-weight: 500;
+      color: var(--cream);
+      margin-bottom: 3rem;
+      letter-spacing: 0.04em;
+    }
+
+    .invitation-sub {
+      font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+      font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+      color: var(--text);
+      line-height: 2.2;
+      margin-bottom: 4rem;
+      letter-spacing: 0.03em;
+    }
+
+    .signature {
+      font-size: 0.78rem;
+      letter-spacing: 0.4em;
+      color: var(--text-faint);
+      text-transform: uppercase;
+      margin-top: 5rem;
+      line-height: 2;
+    }
+
+    .signature .kag {
+      color: var(--coral-soft);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* === Footer === */
+    footer {
+      background: var(--bg-deep);
+      padding: 3rem 6vw;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-faint);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      letter-spacing: 0.1em;
+    }
+
+    /* === Nav === */
+    .nav-top {
+      position: fixed;
+      top: 1.5rem;
+      left: 2rem;
+      z-index: 100;
+      font-size: 0.7rem;
+      letter-spacing: 0.4em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      mix-blend-mode: difference;
+      font-weight: 500;
+    }
+
+    /* === Reveal === */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1), transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--teal), transparent);
+      opacity: 0.3;
+    }
+
+    /* === Mechanism intro === */
+    .mechanism-intro {
+      text-align: center;
+      max-width: 880px;
+      margin: 0 auto 6vh;
+    }
+
+    /* === Responsive === */
+    @media (max-width: 900px) {
+      .feature-block {
+        flex-direction: column !important;
+        gap: 3rem;
+        padding: 8vh 6vw;
+        min-height: auto;
+      }
+      .feature-visual { flex: none; }
+      .feature-icon { width: 160px; height: 160px; }
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 8vh 5vw; }
+      .audience-grid, .dream-grid, .data-grid { grid-template-columns: 1fr; }
+      .aquarium-list { grid-template-columns: 1fr 1fr; }
+      .nav-top { font-size: 0.6rem; left: 1rem; top: 1rem; }
+      .scroll-hint { display: none; }
+      .future-scene { padding: 2rem 1.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .aquarium-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-top">Kansai Aquarium Guild</div>
+
+  <!-- 1. Hero -->
+  <section id="hero">
+    <div class="container reveal">
+      <h1 class="hero-title">水族館は、<br><span class="gold">日本の宝。</span></h1>
+      <p class="hero-sub">
+        もっと輝く場所にしたい。<br>
+        そのために、水族館同士で<br>
+        協力し合うことが、重要だ。
+      </p>
+      <div class="hero-brand">Kansai Aquarium Guild<br>関西水族館ギルド構想 · 2026</div>
+    </div>
+    <div class="scroll-hint">Scroll</div>
+  </section>
+
+  <!-- 2. なぜ日本の宝なのか（データ） -->
+  <section id="why-treasure">
+    <div class="container reveal">
+      <div class="section-label">02 — 世界の中の、日本の水族館</div>
+      <h2>日本の水族館は、<br><span class="gold">世界トップクラス。</span></h2>
+      <p class="lead">
+        飼育技術、種類数、展示の繊細さ——<br>
+        世界中を見渡しても、これだけの密度と質を持つ国はありません。
+      </p>
+
+      <div class="data-grid">
+        <div class="data-point">
+          <div class="data-number">100<span class="data-unit">館以上</span></div>
+          <div class="data-label">日本国内の水族館数<span class="data-sub">世界最多級の密度</span></div>
+        </div>
+        <div class="data-point">
+          <div class="data-number">3,000<span class="data-unit">万人/年</span></div>
+          <div class="data-label">国内水族館の年間来館者数<span class="data-sub">国民の4人に1人が訪れる規模</span></div>
+        </div>
+        <div class="data-point">
+          <div class="data-number">世界初<span class="data-unit"></span></div>
+          <div class="data-label">飼育・繁殖技術の数々<span class="data-sub">ジンベエザメ、マグロ完全養殖など</span></div>
+        </div>
+      </div>
+
+      <p class="muted" style="margin-top: 2.5rem;">
+        ※ 数値は概算。正確な統計は別途確認のうえ反映。<br>
+        この密度と質は、世界に誇るべき日本の文化資産です。
+      </p>
+    </div>
+    <div class="wave"></div>
+  </section>
+
+  <!-- 3. 現在地・課題 -->
+  <section id="challenge">
+    <div class="container reveal">
+      <div class="section-label">03 — 現在地</div>
+      <h2>各館は、それぞれの魅力を<br>磨いてきた。</h2>
+      <p class="lead">
+        ジンベエザメ、ラッコ、クラゲ、深海生物、瀬戸内の小さな魚たち——
+        どの館にも、その館にしかない物語があります。
+      </p>
+      <p class="lead">
+        だが、<span class="accent">一館だけで戦うには、限界がある。</span>
+      </p>
+      <p class="muted">
+        来館頻度、旅の動機、記憶の蓄積——個別最適だけでは、文化は育ちません。<br>
+        経営不振で貴重な生体が観られなくなることは、<br>
+        その館だけの損失ではなく、日本全体の文化的損失です。
+      </p>
+    </div>
+    <div class="wave"></div>
+  </section>
+
+  <!-- 4. 未来の一場面 -->
+  <section id="future">
+    <div class="container reveal">
+      <div class="section-label">04 — もし、こんな未来があったら</div>
+      <h2><span class="accent">もし</span>、関西の水族館を<br>巡ることが——</h2>
+      <div class="future-scene">
+        <p>
+          御朱印や、温泉巡りのような、<br>
+          日本の<span class="gold">「文化的習慣」</span>に<br>
+          なったとしたら？
+        </p>
+      </div>
+      <p class="lead">
+        子供たちが、夏休みに水族館を巡って学びを深める。<br>
+        大人が、年に何度も推しの生き物に会いに行く。<br>
+        海外からの旅人が、日本の水族館を巡るために来日する。
+      </p>
+      <p class="muted">
+        これは、誇張ではなく実現可能な未来です。<br>
+        日本にはそれだけの水族館の密度と質がある。<br>
+        あとは、巡るための「文化」を、業界自身が作るだけ。
+      </p>
+    </div>
+    <div class="wave"></div>
+  </section>
+
+  <!-- 5. 中心思想 -->
+  <section id="philosophy">
+    <div class="container reveal">
+      <div class="section-label">05 — 中心思想</div>
+      <h2>水族館同士は、<br>競合ではなく、<br><span class="accent">仲間</span>である。</h2>
+      <p class="lead">
+        ある館で生まれた感動が、別の館への期待を育てる。<br>
+        これは奪い合いではなく、増やし合いです。
+      </p>
+      <p class="lead">
+        ひとりの水族館ファンが年に1館を訪れる世界と、<br>
+        ひとりのファンが年に5館を訪れる世界。<br>
+        どちらが業界全体を豊かにするかは、明らかです。
+      </p>
+      <p class="muted">
+        水族館は、単なる娯楽施設ではありません。<br>
+        学術的な意義を持ち、子どもたちの好奇心を育み、<br>
+        海洋生物への理解を次世代に渡す、社会のインフラです。
+      </p>
+    </div>
+    <div class="wave"></div>
+  </section>
+
+  <!-- 6. 集まる場自体が価値 -->
+  <section id="gathering">
+    <div class="container reveal">
+      <div class="section-label">06 — 連合の本質</div>
+      <h2>仕掛けの前に、<br>まず<span class="accent">集まること</span>。</h2>
+      <div class="future-scene">
+        <p>
+          水族館を愛する人たちが集まって、<br>
+          水槽を見ながら、お酒を飲み、<br>
+          互いの館の物語を語り合う。<br>
+          <br>
+          それ自体が、業界の未来を変える<br>
+          <span class="gold">最初の一歩</span>です。
+        </p>
+      </div>
+      <p class="lead">
+        制度や仕掛けは、後から自然に生まれます。<br>
+        本当に必要なのは、まず<span class="accent">同じ志を持つ仲間が、同じテーブルにつくこと</span>。
+      </p>
+      <p class="muted">
+        今日のこの食事会は、その第一回。<br>
+        次回は、どこかの水族館を中継しながら、皆で語り合えたら——という構想もあります。
+      </p>
+    </div>
+    <div class="wave"></div>
+  </section>
+
+  <!-- 7. 中核の仕掛け -->
+  <section id="mechanism">
+    <div class="container reveal mechanism-intro">
+      <div class="section-label">07 — 中核の仕掛け</div>
+      <h2>KAG（Kansai Aquarium Guild）<br>を支える、<br><span class="accent">3つの柱</span>。</h2>
+      <p class="muted">
+        ここから先は、思想を形にする具体です。<br>
+        詳細は今日決めるものではありません。輪郭だけ。
+      </p>
+    </div>
+  </section>
+
+  <div class="features-wrapper">
+    <!-- Feature 1: 共通年パス -->
+    <div class="feature-block reveal">
+      <div class="feature-visual">
+        <div class="feature-icon">
+          <svg viewBox="0 0 100 80" fill="none" stroke="#e8725f" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22 Q12 12, 22 12 L78 12 Q88 12, 88 22 L88 32 Q80 32, 80 40 Q80 48, 88 48 L88 58 Q88 68, 78 68 L22 68 Q12 68, 12 58 L12 48 Q20 48, 20 40 Q20 32, 12 32 Z"/>
+            <line x1="50" y1="14" x2="50" y2="66" stroke-dasharray="3,4" opacity="0.5"/>
+            <circle cx="32" cy="40" r="3" fill="#e8725f" opacity="0.4"/>
+            <circle cx="68" cy="40" r="3" fill="#e8725f" opacity="0.4"/>
+          </svg>
+        </div>
+      </div>
+      <div class="feature-content">
+        <div class="feature-number">01 · The Pass</div>
+        <h3 class="feature-title">共通年パス</h3>
+        <p class="feature-lead">
+          ワンタイムの来館から、<br>
+          年に何度でも巡る関係へ。
+        </p>
+        <ul class="feature-sub-points">
+          <li>関西の参加全館を、一枚で巡れる年間パス</li>
+          <li>神戸のびのびパスポートに学んだモデル</li>
+          <li>収益分配モデルは別途設計（本格運用時に確定）</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Feature 2: コンプ図鑑 -->
+    <div class="feature-block alt reveal">
+      <div class="feature-visual">
+        <div class="feature-icon">
+          <svg viewBox="0 0 100 80" fill="none" stroke="#a89ac8" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 16 L12 68 L48 64 L48 12 Z"/>
+            <path d="M52 12 L52 64 L88 68 L88 16 Z"/>
+            <path d="M48 12 L48 64" opacity="0.4"/>
+            <line x1="20" y1="26" x2="40" y2="26" opacity="0.6"/>
+            <line x1="20" y1="34" x2="40" y2="34" opacity="0.6"/>
+            <line x1="20" y1="42" x2="40" y2="42" opacity="0.6"/>
+            <line x1="20" y1="50" x2="36" y2="50" opacity="0.6"/>
+            <line x1="56" y1="26" x2="84" y2="26" opacity="0.6"/>
+            <line x1="56" y1="34" x2="84" y2="34" opacity="0.6"/>
+            <line x1="56" y1="42" x2="84" y2="42" opacity="0.6"/>
+            <line x1="56" y1="50" x2="80" y2="50" opacity="0.6"/>
+            <circle cx="28" cy="58" r="1.5" fill="#a89ac8"/>
+            <circle cx="72" cy="58" r="1.5" fill="#a89ac8"/>
+          </svg>
+        </div>
+      </div>
+      <div class="feature-content">
+        <div class="feature-number">02 · The Book</div>
+        <h3 class="feature-title">コンプ図鑑</h3>
+        <p class="feature-lead">
+          紙の本に、<br>
+          自分だけの水族館人生が積み重なる。
+        </p>
+        <ul class="feature-sub-points">
+          <li>御朱印帳に着想を得た、フィジカル主軸の図鑑</li>
+          <li>ネット販売のベース版＋現地でしか手に入らない要素 = 合体で完成</li>
+          <li>各館の実在生体・名前付き、職人クラフトの質感を担保</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Feature 3: アプリ -->
+    <div class="feature-block reveal">
+      <div class="feature-visual">
+        <div class="feature-icon">
+          <svg viewBox="0 0 100 80" fill="none" stroke="#2a8a9e" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="32" y="8" width="36" height="64" rx="5"/>
+            <line x1="44" y1="64" x2="56" y2="64" opacity="0.6"/>
+            <circle cx="50" cy="12" r="0.8" fill="#2a8a9e"/>
+            <rect x="38" y="20" width="24" height="32" rx="2" opacity="0.4"/>
+            <line x1="42" y1="28" x2="58" y2="28" opacity="0.4"/>
+            <line x1="42" y1="34" x2="54" y2="34" opacity="0.4"/>
+            <circle cx="50" cy="44" r="3" stroke-opacity="0.5"/>
+          </svg>
+        </div>
+      </div>
+      <div class="feature-content">
+        <div class="feature-number">03 · The Companion</div>
+        <h3 class="feature-title">アプリ（黒子）</h3>
+        <p class="feature-lead">
+          鑑賞の時間を奪わない。<br>
+          来館前の期待と、帰った後の余韻を育てる。
+        </p>
+        <ul class="feature-sub-points">
+          <li>水族館の中では、開かせない設計</li>
+          <li>来館後の写真厳選・整理、訪問記録の蓄積</li>
+          <li>次に行く館への期待を育てる「館外」専用のコンパニオン</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. 広がる体験 -->
+  <section id="expansion">
+    <div class="container reveal">
+      <div class="section-label">08 — 広がる体験</div>
+      <h2>3つの世界に、<br>違う届け方で。</h2>
+      <p class="lead">
+        水族館は、誰のものか。<br>
+        その問いに、3つの答えを同時に用意する。
+      </p>
+
+      <div class="audience-grid">
+        <div class="audience-card">
+          <div class="audience-icon">🌟</div>
+          <h3>プレミアム顧客へ</h3>
+          <p class="audience-tagline">他では得られない体験を</p>
+          <p>
+            コンプ達成者だけが招かれる特別イベント。<br>
+            バックヤードツアー、閉館後の館内ガイドナイト、館内お泊まり会、研究者との対話会、飼育員業務体験——コアファンの熱狂を、制度として支える。
+          </p>
+        </div>
+
+        <div class="audience-card">
+          <div class="audience-icon">🐬</div>
+          <h3>子供たちへ</h3>
+          <p class="audience-tagline">学術の入口を、もっと面白く</p>
+          <p>
+            水族館の学術的価値を、子供にも伝わる形に。<br>
+            「マンガ日本の歴史」方式で各館の代表生体を物語化。種の特徴、進化、生態系を、エンタメと一緒に届ける。次世代の海洋生物学者を育てる場へ。
+          </p>
+        </div>
+
+        <div class="audience-card">
+          <div class="audience-icon">✈️</div>
+          <h3>世界からの旅人へ</h3>
+          <p class="audience-tagline">日本の水族館を巡るために来日する</p>
+          <p>
+            特に欧米インバウンドへ。<br>
+            水族館は「日本独自の文化体験」になり得る。多言語ガイド、飼育員ガイドツアー、バックヤード見学——客単価を上げながら、日本の水族館を世界に届ける。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="wave"></div>
+  </section>
+
+  <!-- 9. 妄想の未来 -->
+  <section id="dreams">
+    <div class="container reveal">
+      <div class="section-label">09 — 妄想の未来</div>
+      <h2>仲間が集まったら、<br>こんな未来まで<br>開けるかもしれない。</h2>
+
+      <div class="dream-grid">
+        <div class="dream-card">
+          <h3>24時間ライブ配信</h3>
+          <p>各館の水槽をカメラで繋ぐ。すでに鴨川シーワールド等で成功事例あり。家でも仕事中でも、いつでも水族館に「いる」感覚を届ける。</p>
+        </div>
+        <div class="dream-card">
+          <h3>飼育員リレーインタビュー</h3>
+          <p>YouTubeで、飼育員さんが次の館の飼育員さんへバトンを繋ぐリレー形式。業界内のリスペクトを可視化し、視聴者は連合の輪を体感できる。</p>
+        </div>
+        <div class="dream-card">
+          <h3>統一カメラ・チャンネル</h3>
+          <p>各館を持ち回りで撮影、編集チームと配信チャンネルを統一。個別館では届かない規模のリーチで、業界全体のコンテンツ力を上げる。</p>
+        </div>
+        <div class="dream-card">
+          <h3>各館限定カードパック</h3>
+          <p>その館でしか手に入らない、生き物トレカ。漁師カード方式の現代版。コレクション体験として展開可能。</p>
+        </div>
+        <div class="dream-card">
+          <h3>クリエイターコラボ</h3>
+          <p>音楽・イラスト・漫画——水族館を愛するクリエイターと一緒に、新しい表現を作る。水族館を、文化として豊かにする。</p>
+        </div>
+        <div class="dream-card">
+          <h3>ナイトイベント</h3>
+          <p>コンプ達成者だけが招かれる、閉館後の館内ツアー、お泊まり会、研究者との対話会。プレミアム体験の核。</p>
+        </div>
+      </div>
+
+      <div class="dream-caveat">
+        <strong style="color: var(--gold);">これは、妄想です。</strong><br>
+        すぐに全部やることではありません。<br>
+        仲間が集まったら、こんな未来まで一緒に語り合える、というだけ。
+      </div>
+    </div>
+    <div class="wave"></div>
+  </section>
+
+  <!-- 10. 関西から始める -->
+  <section id="kansai">
+    <div class="container reveal">
+      <div class="section-label">10 — なぜ関西か</div>
+      <h2>関西には、性格の異なる<br>素晴らしい水族館が、<br>これだけの密度で集まっている。</h2>
+      <ul class="aquarium-list">
+        <li>海遊館</li>
+        <li>神戸須磨シーワールド</li>
+        <li>京都水族館</li>
+        <li>ニフレル</li>
+        <li>城崎マリンワールド</li>
+        <li>串本海中公園</li>
+        <li>アドベンチャーワールド</li>
+        <li>伊勢シーパラダイス</li>
+        <li>姫路水族館</li>
+      </ul>
+      <p class="muted" style="margin-top: 3rem;">
+        これだけ多様な館が、これだけの距離に集まっている地域は、世界でも稀です。<br>
+        ここで成功すれば、全国の水族館からも「入りたい」という声が、必ず上がる。
+      </p>
+    </div>
+    <div class="wave"></div>
+  </section>
+
+  <!-- 11. 運営の約束 -->
+  <section id="promise">
+    <div class="container reveal">
+      <div class="section-label">11 — お約束</div>
+      <h2>運営として、<br>お約束すること。</h2>
+      <div class="promises">
+        <div class="promise-item">
+          <h3>飼育員さんの仕事を、増やしません。</h3>
+          <p>取材・撮影・販促・運営は、すべてKAG事務局が主導で動きます。各館にお願いするのは「うちのアイドル生体を教えてください」というメール1往復程度の関わりに留めます。</p>
+        </div>
+        <div class="promise-item">
+          <h3>現場に、無理をさせません。</h3>
+          <p>必要な人手は、KAG事務局が雇用する案内係スタッフで吸収します。各館にお願いするのは、物販コーナーの一角の提供と、通常オペでの販売だけです。</p>
+        </div>
+        <div class="promise-item">
+          <h3>既にある魅力を、外側からつなぎます。</h3>
+          <p>各館の独自性を奪うことはありません。むしろ、連合の中でこそ、各館の個性は際立つ。健全な切磋琢磨は続けながら、業界全体のパイを広げる協働を提案しています。</p>
+        </div>
+      </div>
+    </div>
+    <div class="wave"></div>
+  </section>
+
+  <!-- 12. 仲間への呼びかけ -->
+  <section id="invitation">
+    <div class="container reveal">
+      <h2 class="invitation-title">
+        まだ知らない<br>
+        水族館の魅力を、<br>
+        <span class="accent">もっと教えてください。</span>
+      </h2>
+      <p class="invitation-sub">
+        今日は、契約のお願いではありません。<br>
+        それぞれの水族館の魅力を、<br>
+        語り合うような場所を作りたいのです。<br>
+        <br>
+        水族館を愛する者として、<br>
+        業界の未来を、共に考えませんか。
+      </p>
+      <div class="signature">
+        <span class="kag">Kansai Aquarium Guild</span><br><br>
+        関西水族館ギルド構想<br>
+        2026
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    関西水族館ギルド構想 · 2026 · この資料は議論のための初稿です
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
