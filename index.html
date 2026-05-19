@@ -250,18 +250,20 @@
 
     .data-number {
       font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
-      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-size: clamp(2.3rem, 4.6vw, 3.8rem);
       font-weight: 600;
       color: var(--gold);
       line-height: 1;
       margin-bottom: 0.6rem;
+      white-space: nowrap;
     }
 
     .data-unit {
-      font-size: 0.45em;
+      font-size: 0.38em;
       color: var(--text-muted);
-      margin-left: 0.3em;
+      margin-left: 0.25em;
       font-weight: 400;
+      letter-spacing: 0;
     }
 
     .data-label {
@@ -462,11 +464,16 @@
       transform: translateY(-4px);
     }
 
-    .audience-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      line-height: 1;
+    .audience-number {
+      font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+      font-size: 1.15rem;
+      letter-spacing: 0.2em;
+      color: var(--text-faint);
+      margin-bottom: 1.4rem;
+      font-weight: 500;
     }
+    .audience-card:nth-child(2) .audience-number { color: rgba(212, 184, 127, 0.55); }
+    .audience-card:nth-child(3) .audience-number { color: rgba(168, 154, 200, 0.55); }
 
     .audience-card h3 {
       font-size: 1.3rem;
@@ -600,12 +607,12 @@
 
     .invitation-title {
       font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
-      font-size: clamp(2.2rem, 5.2vw, 4rem);
-      line-height: 1.5;
+      font-size: clamp(1.8rem, 3.6vw, 2.7rem);
+      line-height: 1.65;
       font-weight: 500;
       color: var(--cream);
       margin-bottom: 3rem;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.02em;
     }
 
     .invitation-sub {
@@ -897,21 +904,21 @@
 
       <div class="data-grid">
         <div class="data-point">
-          <div class="data-number">100<span class="data-unit">館以上</span></div>
-          <div class="data-label">日本国内の水族館数<span class="data-sub">世界最多級の密度</span></div>
+          <div class="data-number">約49<span class="data-unit">館</span></div>
+          <div class="data-label">JAZA加盟の水族館数<span class="data-sub">全国では100館超。世界最多級の密度</span></div>
         </div>
         <div class="data-point">
-          <div class="data-number">3,000<span class="data-unit">万人/年</span></div>
-          <div class="data-label">国内水族館の年間来館者数<span class="data-sub">国民の4人に1人が訪れる規模</span></div>
+          <div class="data-number">8,000<span class="data-unit">万人／年超</span></div>
+          <div class="data-label">JAZA加盟園館の年間来場者数<span class="data-sub">水族館・動物園を合わせて、それだけ愛されている</span></div>
         </div>
         <div class="data-point">
-          <div class="data-number">世界初<span class="data-unit"></span></div>
-          <div class="data-label">飼育・繁殖技術の数々<span class="data-sub">ジンベエザメ、マグロ完全養殖など</span></div>
+          <div class="data-number">30<span class="data-unit">年</span></div>
+          <div class="data-label">ジンベエザメ世界最長飼育記録<span class="data-sub">沖縄美ら海。クラゲ種数ギネス、マンボウ最長飼育も日本</span></div>
         </div>
       </div>
 
-      <p class="muted" style="margin-top: 2.5rem;">
-        ※ 数値は概算。正確な統計は別途確認のうえ反映。<br>
+      <p class="muted" style="margin-top: 2.5rem; font-size: 0.82rem;">
+        出典：<a href="https://www.jaza.jp/about-jaza/structure" target="_blank" rel="noopener" style="color: var(--text-muted); border-bottom: 1px solid currentColor;">日本動物園水族館協会（JAZA）公式</a>（2025年）、沖縄美ら海水族館・鴨川シーワールド・加茂水族館 各公式情報。<br>
         この密度と質は、世界に誇るべき日本の文化資産です。
       </p>
     </div>
@@ -1158,14 +1165,14 @@
     </div>
   </div>
 
-  <!-- 8. 形にすると、こうなる — 御水印帳 & アプリ -->
+  <!-- 8. 形にすると、こうなる — 御水印帳 & アプリ（あくまでイメージ） -->
   <section id="tangible">
     <div class="container reveal">
-      <div class="section-label">08 — 形にすると、こうなる</div>
-      <h2>3つの柱は、<br>こんな<span class="gold">物体と画面</span>になる。</h2>
-      <p class="lead">
-        ここまでは思想と輪郭。<br>
-        この先は、<span class="accent">すでに作ったプロトタイプ</span>。
+      <div class="section-label">08 — 形にするとしたら</div>
+      <h2>もし作るとしたら、<br>こんな<span class="gold">物体と画面</span>かもしれない。</h2>
+      <p class="muted" style="text-align:center; margin: 0 auto; max-width: 640px;">
+        以下は、想像を膨らませるための、勝手なイメージです。<br>
+        皆さんと話しながら、形は変わっていくはず。
       </p>
     </div>
 
@@ -1257,8 +1264,8 @@
 
       <div class="audience-grid">
         <div class="audience-card">
-          <div class="audience-icon">🌟</div>
-          <h3>プレミアム顧客へ</h3>
+          <div class="audience-number">01</div>
+          <h3>コアファンへ</h3>
           <p class="audience-tagline">他では得られない体験を</p>
           <p>
             コンプ達成者だけが招かれる特別イベント。<br>
@@ -1267,7 +1274,7 @@
         </div>
 
         <div class="audience-card">
-          <div class="audience-icon">🐬</div>
+          <div class="audience-number">02</div>
           <h3>子供たちへ</h3>
           <p class="audience-tagline">学術の入口を、もっと面白く</p>
           <p>
@@ -1277,7 +1284,7 @@
         </div>
 
         <div class="audience-card">
-          <div class="audience-icon">✈️</div>
+          <div class="audience-number">03</div>
           <h3>世界からの旅人へ</h3>
           <p class="audience-tagline">日本の水族館を巡るために来日する</p>
           <p>
@@ -1356,23 +1363,27 @@
     <div class="wave"></div>
   </section>
 
-  <!-- 11. 運営の約束 -->
+  <!-- 11. 大切にしたいこと -->
   <section id="promise">
     <div class="container reveal">
-      <div class="section-label">12 — お約束</div>
-      <h2>運営として、<br>お約束すること。</h2>
+      <div class="section-label">12 — 大切にしたいこと</div>
+      <h2>これを進めるうえで、<br>大切にしたいこと。</h2>
+      <p class="muted" style="max-width: 720px;">
+        体制も、座組も、これからです。<br>
+        ただ、進めるなら<span class="lav">この3つだけは外したくない</span>、と考えています。
+      </p>
       <div class="promises">
         <div class="promise-item">
-          <h3>飼育員さんの仕事を、増やしません。</h3>
-          <p>取材・撮影・販促・運営は、すべてKAG事務局が主導で動きます。各館にお願いするのは「うちのアイドル生体を教えてください」というメール1往復程度の関わりに留めます。</p>
+          <h3>飼育員さんの仕事を、増やしたくない。</h3>
+          <p>取材・撮影・販促物の制作・運営オペレーションは、なるべく各館の外側で吸収する仕組みにしたい。各館にお願いするのは「うちのアイドル生体を教えてください」程度の、ごく軽い関わりに留めたいと思っています。</p>
         </div>
         <div class="promise-item">
-          <h3>現場に、無理をさせません。</h3>
-          <p>必要な人手は、KAG事務局が雇用する案内係スタッフで吸収します。各館にお願いするのは、物販コーナーの一角の提供と、通常オペでの販売だけです。</p>
+          <h3>現場に、無理をさせない設計を。</h3>
+          <p>新しい人手が必要になる部分は、各館の業務にではなく、連合側で受け止められる形を探したい。各館にお願いするのは、物販コーナーの一角の提供や、通常オペの範囲内での販売など、無理のない協力に留めたい。</p>
         </div>
         <div class="promise-item">
-          <h3>既にある魅力を、外側からつなぎます。</h3>
-          <p>各館の独自性を奪うことはありません。むしろ、連合の中でこそ、各館の個性は際立つ。健全な切磋琢磨は続けながら、業界全体のパイを広げる協働を提案しています。</p>
+          <h3>既にある魅力を、外側からつなぐ。</h3>
+          <p>各館の独自性を奪うことはしません。むしろ、連合の中でこそ、各館の個性はもっと際立つはず。健全な切磋琢磨は続けながら、業界全体のパイを広げる協働でありたい。</p>
         </div>
       </div>
     </div>
@@ -1383,12 +1394,10 @@
   <section id="invitation">
     <div class="container reveal">
       <h2 class="invitation-title">
-        まだ知らない<br>
-        水族館の魅力を、<br>
+        僕のまだ知らない水族館の魅力を、<br>
         <span class="accent">もっと教えてください。</span>
       </h2>
       <p class="invitation-sub">
-        今日は、契約のお願いではありません。<br>
         それぞれの水族館の魅力を、<br>
         語り合うような場所を作りたいのです。<br>
         <br>
