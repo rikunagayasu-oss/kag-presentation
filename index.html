@@ -281,6 +281,54 @@
       font-weight: 400;
     }
 
+    /* === World firsts block === */
+    .firsts-block {
+      margin-top: 4rem;
+      padding: 2.5rem 2rem;
+      background: linear-gradient(180deg, rgba(212, 184, 127, 0.04), rgba(212, 184, 127, 0.01));
+      border-top: 1px solid rgba(212, 184, 127, 0.18);
+      border-bottom: 1px solid rgba(212, 184, 127, 0.18);
+    }
+    .firsts-heading {
+      font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+      font-weight: 500;
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      line-height: 1.7;
+      color: var(--cream);
+      letter-spacing: 0.04em;
+      margin: 0 0 1.8rem;
+      text-align: center;
+    }
+    .firsts-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 0.7rem 2rem;
+    }
+    .firsts-list li {
+      padding: 0.7rem 0;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: var(--cream);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .firsts-mark {
+      display: inline-block;
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      font-size: 0.66rem;
+      letter-spacing: 0.16em;
+      color: var(--gold);
+      border: 1px solid rgba(212, 184, 127, 0.5);
+      padding: 2px 8px;
+      border-radius: 999px;
+      margin-right: 0.7rem;
+      vertical-align: 1px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
     /* === Future scene quote === */
     .future-scene {
       padding: 3rem 2.5rem;
@@ -896,30 +944,45 @@
   <section id="why-treasure">
     <div class="container reveal">
       <div class="section-label">02 — 世界の中の、日本の水族館</div>
-      <h2>日本の水族館は、<br><span class="gold">世界トップクラス。</span></h2>
+      <h2>日本は、<br><span class="gold">世界第2位の水族館大国</span>。</h2>
       <p class="lead">
-        飼育技術、種類数、展示の繊細さ——<br>
-        世界中を見渡しても、これだけの密度と質を持つ国はありません。
+        館の密度、飼う種類の多さ、世界初の飼育・繁殖技術——<br>
+        どこを切り取っても、世界の海洋研究の最前線にいる国です。
       </p>
 
       <div class="data-grid">
         <div class="data-point">
-          <div class="data-number">約49<span class="data-unit">館</span></div>
-          <div class="data-label">JAZA加盟の水族館数<span class="data-sub">全国では100館超。世界最多級の密度</span></div>
+          <div class="data-number">世界<span class="data-unit">2位</span></div>
+          <div class="data-label">水族館の数<span class="data-sub">JAZA加盟49館。米国（102館）に次ぐ世界2位。人口比・面積比なら世界一の密度</span></div>
         </div>
         <div class="data-point">
-          <div class="data-number">8,000<span class="data-unit">万人／年超</span></div>
-          <div class="data-label">JAZA加盟園館の年間来場者数<span class="data-sub">水族館・動物園を合わせて、それだけ愛されている</span></div>
+          <div class="data-number">約1,200<span class="data-unit">種</span></div>
+          <div class="data-label">飼育生物の種類数（鳥羽水族館）<span class="data-sub">米ジョージア約500種、シンガポールS.E.A.約1,000種を上回る世界最多級</span></div>
         </div>
         <div class="data-point">
           <div class="data-number">30<span class="data-unit">年</span></div>
-          <div class="data-label">ジンベエザメ世界最長飼育記録<span class="data-sub">沖縄美ら海。クラゲ種数ギネス、マンボウ最長飼育も日本</span></div>
+          <div class="data-label">ジンベエザメ世界最長飼育（沖縄美ら海・2025年）<span class="data-sub">マンタの水族館内繁殖、クロマグロ完全養殖など、世界初は数えきれない</span></div>
         </div>
       </div>
 
-      <p class="muted" style="margin-top: 2.5rem; font-size: 0.82rem;">
-        出典：<a href="https://www.jaza.jp/about-jaza/structure" target="_blank" rel="noopener" style="color: var(--text-muted); border-bottom: 1px solid currentColor;">日本動物園水族館協会（JAZA）公式</a>（2025年）、沖縄美ら海水族館・鴨川シーワールド・加茂水族館 各公式情報。<br>
-        この密度と質は、世界に誇るべき日本の文化資産です。
+      <!-- 世界初・世界一の実績リスト -->
+      <div class="firsts-block">
+        <h3 class="firsts-heading">海の中で人類が初めて見た景色の多くは、<br><span class="gold">日本の水族館から生まれている。</span></h3>
+        <ul class="firsts-list">
+          <li><span class="firsts-mark">世界最長</span>ジンベエザメ飼育 30年・沖縄美ら海水族館（2025）</li>
+          <li><span class="firsts-mark">世界初</span>クロマグロの完全養殖・近畿大学（2002）</li>
+          <li><span class="firsts-mark">世界初</span>クロマグロの群泳展示・葛西臨海水族園（1989）</li>
+          <li><span class="firsts-mark">世界初</span>ナンヨウマンタの飼育下出産・沖縄美ら海（2007）</li>
+          <li><span class="firsts-mark">世界初</span>ブラックマンタの水族館内繁殖・沖縄美ら海（2024）</li>
+          <li><span class="firsts-mark">世界一</span>クラゲ展示種数ギネス認定・鶴岡市立加茂水族館</li>
+          <li><span class="firsts-mark">世界唯一</span>ジュゴン×マナティー同時飼育・鳥羽水族館</li>
+          <li><span class="firsts-mark">世界最長</span>マンボウ飼育 2,993日・鴨川シーワールド</li>
+        </ul>
+      </div>
+
+      <p class="muted" style="margin-top: 2rem; font-size: 0.82rem;">
+        出典：<a href="https://www.jaza.jp/about-jaza/structure" target="_blank" rel="noopener" style="color: var(--text-muted); border-bottom: 1px solid currentColor;">日本動物園水族館協会（JAZA）</a>、<a href="https://aquarium.co.jp/more/gaiyou/" target="_blank" rel="noopener" style="color: var(--text-muted); border-bottom: 1px solid currentColor;">鳥羽水族館</a>、<a href="https://churaumi.okinawa/topics/1738656455/" target="_blank" rel="noopener" style="color: var(--text-muted); border-bottom: 1px solid currentColor;">沖縄美ら海水族館</a>、<a href="https://en.wikipedia.org/wiki/List_of_largest_aquariums" target="_blank" rel="noopener" style="color: var(--text-muted); border-bottom: 1px solid currentColor;">List of largest aquariums</a> 他、各館公式情報。<br>
+        ※ 種類数の世界順位に統一公的ランキングは存在しないため、各館公表値の比較として記載。
       </p>
     </div>
     <div class="wave"></div>
