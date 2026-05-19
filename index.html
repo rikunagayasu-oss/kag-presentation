@@ -281,6 +281,53 @@
       font-weight: 400;
     }
 
+    /* === World blocks (02 section, 3 vertical blocks) === */
+    .world-block {
+      margin-top: 8vh;
+      max-width: 760px;
+      text-align: center;
+    }
+    .world-block:first-of-type { margin-top: 5vh; }
+    .world-tag {
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.6rem;
+      font-weight: 600;
+    }
+    .world-headline {
+      font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+      font-weight: 600;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      line-height: 1.55;
+      color: var(--cream);
+      letter-spacing: 0.03em;
+      margin: 0 0 1.8rem;
+    }
+    .world-divider {
+      width: 48px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.55;
+      margin: 0 auto 2rem;
+    }
+    .world-body {
+      max-width: 680px;
+      margin: 0 auto 1.3rem;
+      font-size: clamp(0.96rem, 1.2vw, 1.08rem);
+      line-height: 2;
+      color: var(--text);
+      text-align: left;
+      letter-spacing: 0.02em;
+    }
+    .world-body:last-child { margin-bottom: 0; }
+    @media (max-width: 700px) {
+      .world-block { margin-top: 6vh; }
+      .world-body { font-size: 0.94rem; line-height: 1.9; }
+    }
+
     /* === World firsts block === */
     .firsts-block {
       margin-top: 4rem;
@@ -944,27 +991,54 @@
   <section id="why-treasure">
     <div class="container reveal">
       <div class="section-label">02 — 世界の中の、日本の水族館</div>
-      <h2>日本は、<br><span class="gold">世界第2位の水族館大国</span>。</h2>
+      <h2>日本は、<br><span class="gold">世界で群を抜く水族館大国</span>。</h2>
       <p class="lead">
-        館の密度、飼う種類の多さ、世界初の飼育・繁殖技術——<br>
-        どこを切り取っても、世界の海洋研究の最前線にいる国です。
+        館の密度、海の生物多様性、見せ方の独自性——<br>
+        どこを切り取っても、日本の水族館は世界の最前線にいます。
       </p>
+    </div>
 
-      <div class="data-grid">
-        <div class="data-point">
-          <div class="data-number">世界<span class="data-unit">2位</span></div>
-          <div class="data-label">水族館の数<span class="data-sub">JAZA加盟49館。米国（102館）に次ぐ世界2位。人口比・面積比なら世界一の密度</span></div>
-        </div>
-        <div class="data-point">
-          <div class="data-number">約1,200<span class="data-unit">種</span></div>
-          <div class="data-label">飼育生物の種類数（鳥羽水族館）<span class="data-sub">米ジョージア約500種、シンガポールS.E.A.約1,000種を上回る世界最多級</span></div>
-        </div>
-        <div class="data-point">
-          <div class="data-number">30<span class="data-unit">年</span></div>
-          <div class="data-label">ジンベエザメ世界最長飼育（沖縄美ら海・2025年）<span class="data-sub">マンタの水族館内繁殖、クロマグロ完全養殖など、世界初は数えきれない</span></div>
-        </div>
-      </div>
+    <!-- ブロック1：密度 -->
+    <div class="container reveal world-block">
+      <div class="world-tag">01 · 密度</div>
+      <h3 class="world-headline">世界で群を抜く、<br>水族館の島国。</h3>
+      <div class="world-divider"></div>
+      <p class="world-body">
+        日本動物園水族館協会（JAZA）加盟は49館。観光地併設や小規模館などの非加盟も含めると、全国に<span class="gold">約165館</span>。国土37.8万km²に対し、1万km²あたり<span class="gold">約4.4館</span>の密度で、ほぼ全都道府県に水族館がある。
+      </p>
+      <p class="world-body">
+        近畿だけで主要10館以上——海遊館、京都水族館、神戸須磨シーワールド、ニフレル、城崎マリンワールド、アドベンチャーワールド、串本海中公園、伊勢シーパラダイス、姫路水族館、atoa、鳥羽水族館……。これだけの濃度で水族館が集まる地域は、世界に他にありません。
+      </p>
+    </div>
 
+    <!-- ブロック2：海の生物多様性 -->
+    <div class="container reveal world-block">
+      <div class="world-tag">02 · 生物多様性</div>
+      <h3 class="world-headline">日本は『一国で世界の海』を見せられる、<br>地球で唯一のホットスポット。</h3>
+      <div class="world-divider"></div>
+      <p class="world-body">
+        日本近海の海水魚は<span class="gold">約3,700種</span>——世界の海水魚の<span class="gold">25%</span>。地球の海のわずか<span class="gold">0.9%</span>にすぎない海域に、海洋生物全体で33,629種、世界既知の<span class="gold">約15%</span>が暮らしている。固有種約1,900種、大西洋全域より日本一国の海水魚の方が多い。
+      </p>
+      <p class="world-body">
+        黒潮と親潮の合流点、世界級の深海溝、亜寒帯から亜熱帯のサンゴ礁まで——一つの国でこれだけの海洋環境を抱える国は、地球上に他にありません。
+      </p>
+    </div>
+
+    <!-- ブロック3：見せ方・育て方 -->
+    <div class="container reveal world-block">
+      <div class="world-tag">03 · 見せ方・育て方</div>
+      <h3 class="world-headline">『日本らしい見せ方』は、<br>世界から注目される独自の価値。</h3>
+      <div class="world-divider"></div>
+      <p class="world-body">
+        飼育員さん手書きの解説、SNSで世界に届く個性、都市と直結する水族館——研究最前線と、暮らしの近さが同時にある。これは日本独自の進化です。
+      </p>
+      <p class="world-body">
+        加茂水族館はクラゲ展示で<span class="gold">ギネス2冠</span>——種数約80、5m径の世界最大クラゲ水槽（米モントレーベイの常設は9種）。沼津港深海水族館は『水深200m以下を中心とした世界初の博物館』、シーラカンス標本を世界で唯一同時展示。鳥羽水族館のダイオウグソクムシ絶食記録は <span class="gold">NPR・Smithsonian・BBC</span> が連発で報道しています。
+      </p>
+    </div>
+
+    <!-- 世界初リスト wrapper -->
+    <div class="container reveal">
       <!-- 世界初・世界一の実績リスト -->
       <div class="firsts-block">
         <h3 class="firsts-heading">海の中で人類が初めて見た景色の多くは、<br><span class="gold">日本の水族館から生まれている。</span></h3>
@@ -1346,24 +1420,71 @@
           </p>
         </div>
 
-        <div class="audience-card">
-          <div class="audience-number">03</div>
-          <h3>世界からの旅人へ</h3>
-          <p class="audience-tagline">日本の水族館を巡るために来日する</p>
-          <p>
-            特に欧米インバウンドへ。<br>
-            水族館は「日本独自の文化体験」になり得る。多言語ガイド、飼育員ガイドツアー、バックヤード見学——客単価を上げながら、日本の水族館を世界に届ける。
-          </p>
-        </div>
       </div>
     </div>
     <div class="wave"></div>
   </section>
 
-  <!-- 9. 妄想の未来 -->
+  <!-- 10. 世界へ届く水族館（インバウンド・新セクション） -->
+  <section id="inbound">
+    <div class="container reveal">
+      <div class="section-label">10 — 世界へ届く</div>
+      <h2>まだ誰も作っていない、<br><span class="gold">水族館の旅</span>。</h2>
+      <p class="lead">
+        日本の水族館は、海外からの旅人にとって<br>
+        「日本でしかできない体験」になり得る。<br>
+        ——その入り口を、まだ誰も作っていない。
+      </p>
+    </div>
+
+    <div class="container reveal world-block">
+      <div class="world-tag">01 · 訪日客は記録的な伸び</div>
+      <h3 class="world-headline">2025年、訪日外国人は<br>過去最高の4,268万人。</h3>
+      <div class="world-divider"></div>
+      <p class="world-body">
+        欧米豪は2019年比で<span class="gold">+50〜180%</span>の伸長。一人当たり旅行支出は英国<span class="gold">38.3万円</span>、豪州<span class="gold">38.2万円</span>、フランス<span class="gold">36.1万円</span>——全体平均22.7万円の<span class="gold">約1.5〜1.7倍</span>。彼らは「日本でしかできない体験」のためなら、惜しまずに支払う。
+      </p>
+      <p class="world-body">
+        ところが、彼らが日本で使う娯楽・サービス費は支出のわずか<span class="gold">4.8%</span>。買い物・宿泊・食事に比べ、体験の受け皿が圧倒的に足りていない。<span class="gold">空白市場</span>です。
+      </p>
+    </div>
+
+    <div class="container reveal world-block">
+      <div class="world-tag">02 · 既に評価されている素材</div>
+      <h3 class="world-headline">外国人に最も支持される<br>動物園・水族館は、<span class="gold">海遊館</span>。</h3>
+      <div class="world-divider"></div>
+      <p class="world-body">
+        2024年・2025年の訪日ラボ調査で、動物園・水族館部門は2年連続で<span class="gold">海遊館が1位、沖縄美ら海が2位</span>。GoogleマップやTripAdvisorに、欧米客の高評価レビューが多数集まる。
+      </p>
+      <p class="world-body">
+        だが——「<span class="gold">複数の水族館を巡る</span>」訪日ツアー商品は、国内にも海外にも、まだ存在していません。御朱印巡り、温泉巡り、寺社巡りは観光商品として成立している。水族館巡りも、同じ文脈で成立する素地はある。
+      </p>
+    </div>
+
+    <div class="container reveal world-block">
+      <div class="world-tag">03 · KAGが、その入り口になる</div>
+      <h3 class="world-headline">共通年パス + バックヤード体験 = <br><span class="gold">日本独自の文化体験</span>。</h3>
+      <div class="world-divider"></div>
+      <p class="world-body">
+        共通年パスは、海外からの旅人にとって「複数館を巡るチケット」。多言語ガイド、飼育員ガイドツアー、夜間バックヤード見学——これらは欧米客が支払いたい単価帯（一回数千〜数万円）にぴったり収まる体験です。
+      </p>
+      <p class="world-body">
+        「Japan aquarium tour」を検索しても、まだ何も出てこない。だからこそ、関西から始める意味があります。万博2025のレガシーとして、世界に届く水族館の旅を作る。
+      </p>
+    </div>
+
+    <div class="container reveal">
+      <p class="muted" style="margin-top: 2.5rem; font-size: 0.82rem; text-align: center;">
+        出典：<a href="https://www.jnto.go.jp/news/press/20260121_monthly.html" target="_blank" rel="noopener" style="color: var(--text-muted); border-bottom: 1px solid currentColor;">JNTO 2026年1月発表</a>、<a href="https://www.mlit.go.jp/kankocho/content/001884192.pdf" target="_blank" rel="noopener" style="color: var(--text-muted); border-bottom: 1px solid currentColor;">観光庁 2024年訪日外国人消費動向調査</a>、<a href="https://honichi.com/news/2024/01/31/202401_inboundranking-zooaquarium/" target="_blank" rel="noopener" style="color: var(--text-muted); border-bottom: 1px solid currentColor;">訪日ラボ 2024年動物園・水族館人気ランキング</a>、JTB総研。
+      </p>
+    </div>
+    <div class="wave"></div>
+  </section>
+
+  <!-- 11. 妄想の未来 -->
   <section id="dreams">
     <div class="container reveal">
-      <div class="section-label">10 — 妄想の未来</div>
+      <div class="section-label">11 — 妄想の未来</div>
       <h2>仲間が集まったら、<br>こんな未来まで<br>開けるかもしれない。</h2>
 
       <div class="dream-grid">
@@ -1405,7 +1526,7 @@
   <!-- 10. 関西から始める -->
   <section id="kansai">
     <div class="container reveal">
-      <div class="section-label">11 — なぜ関西か</div>
+      <div class="section-label">12 — なぜ関西か</div>
       <h2>関西には、性格の異なる<br>素晴らしい水族館が、<br>これだけの密度で集まっている。</h2>
       <ul class="aquarium-list">
         <li>海遊館</li>
@@ -1429,7 +1550,7 @@
   <!-- 11. 大切にしたいこと -->
   <section id="promise">
     <div class="container reveal">
-      <div class="section-label">12 — 大切にしたいこと</div>
+      <div class="section-label">13 — 大切にしたいこと</div>
       <h2>これを進めるうえで、<br>大切にしたいこと。</h2>
       <p class="muted" style="max-width: 720px;">
         体制も、座組も、これからです。<br>
